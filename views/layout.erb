@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MUSINGS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One|Cabin+Sketch" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+
+      <ul>
+        <li><a href="/home">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <% if session[:user] == nil %>
+          <li><a href="/signup">SIGNUP</a></li>
+          <li><a href="/login">LOGIN</a></li>
+        <% else %>
+          <li><a href="/account"> <%= session[:user].first_name.upcase %></a></li>
+          <li><a href="/logout">LOG OUT</a></li>
+        <% end %>
+      </ul>
+    </nav>
+
+
+<%= yield %>
+
+  </body>
+</html>
