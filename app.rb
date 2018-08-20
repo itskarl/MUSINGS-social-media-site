@@ -1,8 +1,9 @@
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sinatra/flash'
 enable :sessions
 
-set :database, "sqlite3:rumblr.sqlite3"
+set :database, 'sqlite3:rumblr.sqlite3'
 
 get '/' do
   p 'someone visited'
@@ -16,7 +17,21 @@ get '/login' do
 end
 
 get '/account' do
-  erb :account
+  @allposts = Post.all
+
+  if !session[:user].nil?
+    erb :account
+  else
+    erb :home
+  end
+end
+
+get '/profile' do
+  if !session[:user].nil?
+    erb :profile
+  else
+    erb :login
+  end
 end
 
 get '/signup' do
@@ -31,19 +46,75 @@ get '/about' do
   erb :about
 end
 
+get '/deleteaccount' do
+  erb :deleteaccount
+end
+
+
 post '/signup' do
   p params
-
   user = User.new(
     email: params['email'],
     first_name: params['first_name'],
     last_name: params['last_name'],
     username: params['username'],
-    password: params['password']
+    password: params['password'],
+    birthday: params['birthday']
   )
+  user.save
 
   if user != nil
-    user.save
+    email = params['email']
+    input_password = params['password']
+    user = User.find_by(email: email)
+
+      user.password == input_password
+      session[:user] = user
+      redirect '/account'
+  else
+    p 'error in signup'
+  end
+
+  rescue ActiveRecord::RecordNotUnique
+  p 'Needs unique info'
+  redirect '/signup'
+
+end
+
+
+post '/login' do
+  email = params['email']
+  input_password = params['password']
+
+  user = User.find_by(email: email)
+  unless user == nil
+    if user.password == input_password
+      session[:user] = user
+      redirect :account
+    else
+      p 'invalid login'
+      redirect '/login'
+    end
+  end
+end
+
+get '/logout' do
+  session[:user] = nil
+  p 'user has logged out'
+  erb :logout
+end
+
+post '/account' do
+
+  posting = Post.create(
+    content: params[:content],
+    creator: session[:user].username,
+    image_url: params[:image_url],
+    post_time: Time.now
+  )
+
+  if !posting.nil?
+    posting.save
   else
     p 'try again'
   end
@@ -51,24 +122,28 @@ post '/signup' do
   redirect '/account'
 end
 
-post '/login' do
-  email = params['email']
-  input_password = params['password']
-
-  user =  User.find_by(email: email)
-  if user.password == input_password
-    session[:user] = user
-    redirect :account
-  else
-    p "invalid login"
-    redirect '/login'
-  end
+post '/deleteaccount' do
+  User.find(session[:user].id).destroy
+  p "USER #{session[:user].first_name} DELETED"
+  session[:user] = nil
+  redirect '/'
 end
 
-get '/logout' do
-  session[:user] = nil
-  p "user has logged out"
-  erb :logout
+get '/muser/:id' do
+  @muser = User.find(params[:id])
+  erb :muser
+end
+
+get '/muser/:id' do
+  begin
+    @user = User.find(params[:id])
+    @posts = @user.posts.order(datetime: :desc).limit(20).offset(params[:page])
+    @paginate = @posts.paginate(page: params[:page], per_page: 20)
+  rescue
+    flash[:warning] = 'There are no posts associated with this user!'
+    redirect '/'
+  end
+  erb :posts
 end
 
 get '/*' do

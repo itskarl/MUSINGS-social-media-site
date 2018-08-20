@@ -1,0 +1,27 @@
+<div class="simplecenter">
+  This is your profile
+
+  <br>
+  NAME:
+  <%= session[:user].first_name%>
+  <%= session[:user].last_name%><br>
+  USERNAME:
+  <%= session[:user].username%><br>
+  MUSE BIRTHDAY:
+  <%= session[:user].created_at.to_s.byteslice(5..6)%>
+  |
+  <%= session[:user].created_at.to_s.byteslice(8..9)%>
+  |
+  <%= session[:user].created_at.to_s.byteslice(0..3)%>
+  <br>
+  REAL BIRTHDAY:
+  <%= session[:user].birthday.byteslice(5..6)%>
+  |
+  <%= session[:user].birthday.byteslice(8..9)%>
+  |
+  <%= session[:user].birthday.byteslice(0..3)%>
+  <br>
+  EMAIL:
+  <%= session[:user].email%><br>
+
+</div>

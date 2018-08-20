@@ -56,6 +56,44 @@ nav li a:hover {
   transition-duration: .3s;
 }
 
+/* FORM STYLING */
+/* FORM STYLING */
+/* FORM STYLING */
+
+input, textarea {
+  color: steelblue;
+  margin: auto auto;
+  border-style: none;
+  width: 300px;
+  height: 30px;
+  border-radius: 5px 0px 5px 0px;
+  font-size: 1em;
+  padding: 0 15px 0 15px;
+  margin: 5px;
+}
+
+textarea {
+    height: 80px;
+    resize: none;
+    padding: 15px 15px 0 15px;
+    font-family: 'Abel', sans-serif;
+    font-size: 1em;
+}
+
+
+input[type=submit] {
+  height: 30px;
+  background-color: #aba1ff;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #32279e;
+}
+
 /* HOME CSS */
 /* HOME CSS */
 /* HOME CSS */
@@ -66,7 +104,7 @@ nav li a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .simplecenter img {
@@ -75,15 +113,15 @@ nav li a:hover {
 }
 
 .main-bubble {
-    position: relative;
-    background: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: auto;
-    padding: 20px;
-    margin-bottom: 1em;
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 20px;
+  margin-bottom: 1em;
 }
 
 .main-bubble:after {

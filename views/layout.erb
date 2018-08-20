@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>MUSINGS</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Abel|Fjalla+One|Cabin+Sketch" rel="stylesheet">
   </head>
@@ -11,15 +11,18 @@
     <nav>
 
       <ul>
-        <li><a href="/home">HOME</a></li>
-        <li><a href="/about">ABOUT</a></li>
         <% if session[:user] == nil %>
+          <li><a href="/home">HOME</a></li>
           <li><a href="/signup">SIGNUP</a></li>
           <li><a href="/login">LOGIN</a></li>
         <% else %>
-          <li><a href="/account"> <%= session[:user].first_name.upcase %></a></li>
+          <li><a href="/account">HOME</a></li>
+          <li><a href="/profile"> <%= session[:user].first_name.upcase %></a></li>
+          <li><a href="/muser/<%= session[:user].id %>"> MUSINGS </a></li>
+
           <li><a href="/logout">LOG OUT</a></li>
         <% end %>
+          <li><a href="/about">ABOUT</a></li>
       </ul>
     </nav>
 

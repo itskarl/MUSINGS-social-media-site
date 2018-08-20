@@ -12,12 +12,25 @@
         <% end %>
 
         <div class="new-post-box">
-          <form action="/posts" method="post">
+          <form action="/account" method="post">
             <h3>New post</h3>
-            <textarea id="post-title" name="title" placeholder="Title" required="required"></textarea>
-            <textarea id="post-content" name="content" placeholder="Your Musing" required="required"></textarea>
-            <textarea id="post-image" name="image_url" placeholder="Image url (optional)"></textarea>
-            <input type="submit">
+            <textarea id="post-content" name="content" placeholder="YOUR MUSING" required="required" maxlength="200"></textarea><br>
+            <input id="post-image" name="image_url" placeholder="SELFIE URL (optional)"></input><br>
+            <input type="submit" value="MUSE">
           </form>
+        </div>
+
+        <a href="/deleteaccount">
+          DELETE
+        </a>
+
+        <div class="posts">
+          <% @allposts.each do |q| %>
+            <div class="eachpost">
+              <%= q.content %><br>
+              <%= q.creator %><br>
+              <hr>
+            </div>
+          <% end %>
         </div>
       </div>

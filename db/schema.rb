@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_08_19_175124) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.string "username"
+    t.string "creator"
     t.string "image_url"
     t.datetime "post_time"
     t.boolean "public"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_08_19_175124) do
     t.string "password_hash"
     t.datetime "created_at"
     t.datetime "posted_at"
+    t.string "birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
