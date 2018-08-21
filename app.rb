@@ -67,6 +67,7 @@ post '/signup' do
   user.save
 
   if user != nil
+    # this signs them in
     email = params['email']
     input_password = params['password']
     user = User.find_by(email: email)
@@ -108,7 +109,6 @@ get '/logout' do
 end
 
 post '/account' do
-
   posting = Post.create(
     content: params[:content],
     creator: session[:user].username,
@@ -141,6 +141,11 @@ get '/muser/:id' do
     redirect '/'
   end
   erb :muser
+end
+
+get '/deletepost/:id' do
+  Post.find(params[:id]).destroy
+  redirect "/muser/#{session[:user].id}"
 end
 
 get '/*' do
