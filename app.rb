@@ -4,7 +4,9 @@ require 'sinatra/flash'
 require 'faker'
 enable :sessions
 
-set :database, 'sqlite3:rumblr.sqlite3'
+require 'active_record'
+# set :database, 'sqlite3:rumblr.sqlite3'
+ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
 
 get '/' do
   p 'someone visited'
