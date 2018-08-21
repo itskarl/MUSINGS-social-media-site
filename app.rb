@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require 'sinatra/flash'
+require 'faker'
 enable :sessions
 
 set :database, 'sqlite3:rumblr.sqlite3'
@@ -61,6 +62,7 @@ post '/signup' do
     password: params['password'],
     birthday: params['birthday']
   )
+
   user.save
 
   if user != nil
@@ -110,7 +112,8 @@ post '/account' do
     content: params[:content],
     creator: session[:user].username,
     image_url: params[:image_url],
-    post_time: Time.now
+    post_time: Time.now,
+    user_id: session[:user].id
   )
 
   if !posting.nil?
@@ -130,20 +133,13 @@ post '/deleteaccount' do
 end
 
 get '/muser/:id' do
-  @muser = User.find(params[:id])
-  erb :muser
-end
-
-get '/muser/:id' do
   begin
-    @user = User.find(params[:id])
-    @posts = @user.posts.order(datetime: :desc).limit(20).offset(params[:page])
-    @paginate = @posts.paginate(page: params[:page], per_page: 20)
+    @muser = User.find(params[:id])
+    @posts = @muser.posts
   rescue
-    flash[:warning] = 'There are no posts associated with this user!'
     redirect '/'
   end
-  erb :posts
+  erb :muser
 end
 
 get '/*' do

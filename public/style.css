@@ -14,6 +14,23 @@ body {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(255, 251, 181);
+}
+
+a:visited {
+  color: rgb(189, 188, 122);
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  text-align: right;
+  font-weight: 400;
+}
+
+
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -55,6 +72,11 @@ nav li a:hover {
   border-bottom-width: 1px;
   transition-duration: .3s;
 }
+
+nav li a:visited {
+  color:white;
+}
+
 
 /* FORM STYLING */
 /* FORM STYLING */
@@ -145,4 +167,78 @@ input[type=submit]:hover {
   font-weight: 100;
   margin: 0;
   color: rgb(109, 98, 205);
+}
+
+
+/* ACCOUNT CSS */
+/* ACCOUNT CSS */
+/* ACCOUNT CSS */
+
+
+.indiv-bubble {
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  padding: 20px;
+  color: rgb(109, 98, 205);
+  margin-bottom: 2em;
+  width: 400px;
+  box-sizing: border-box;
+}
+
+.indiv-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 0;
+  height: 0;
+  border: 16px solid transparent;
+  border-top-color: #feffff;
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: -13px;
+  margin-bottom: -16px;
+}
+
+.account-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.eachpost {
+  margin: 1em 0 1em 0;
+}
+
+.post-image {
+  margin-top: -2em;
+}
+
+.new-post-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.post-container {
+  height: 70vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.greeting {
+  margin: 1em;
+  text-align: right;
+}
+
+.new-muse-form {
+  background-color: rgba(0, 0, 0, 0.49);
+  padding: 30px 20px;
 }

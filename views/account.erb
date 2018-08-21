@@ -1,36 +1,50 @@
-<div class="simplecenter">
+<div class="account-container">
 
-  <h3>YOUR HOMEPAGE</h3>
-  <% if session[:user] == nil %>
-    <p>
-      Sign up!
-    </p>
-    <% elsif session[:user] != nil %>
-      <p>Welcome back,
-        <%= session[:user].first_name %>
-        <p>
+  <div>
+    <div class="new-post-box">
+
+      <h2> THE LATEST MUSINGS </h2>
+
+      <% @allposts.reverse.first(20).each do |q| %>
+        <div class="eachpost">
+          <div class="indiv-bubble">
+            <%= q.content %><br>
+            <%= q.image_url %><br>
+            <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
+          </div>
+          <div class="post-image">
+            <% if q.image_url == "" %>
+              <img src="images/selfies/<%=rand(1..42)%>.jpg">
+            <% else %>
+              <img src="<%= q.image_url %>">
+            <% end %>
+              <br>
+              <%= q.post_time.to_s.byteslice(5..6) %> |
+              <%= q.post_time.to_s.byteslice(8..9) %> |
+              <%= q.post_time.to_s.byteslice(0..3) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="post-container">
+
+    <div class="new-post-box">
+        <div class="greeting">
+        <% if session[:user] != nil %>
+          <h2>Welcome back,
+            <%= session[:user].first_name.capitalize %>!
+          </h2>
         <% end %>
-
-        <div class="new-post-box">
-          <form action="/account" method="post">
-            <h3>New post</h3>
-            <textarea id="post-content" name="content" placeholder="YOUR MUSING" required="required" maxlength="200"></textarea><br>
-            <input id="post-image" name="image_url" placeholder="SELFIE URL (optional)"></input><br>
-            <input type="submit" value="MUSE">
-          </form>
         </div>
-
-        <a href="/deleteaccount">
-          DELETE
-        </a>
-
-        <div class="posts">
-          <% @allposts.each do |q| %>
-            <div class="eachpost">
-              <%= q.content %><br>
-              <%= q.creator %><br>
-              <hr>
-            </div>
-          <% end %>
-        </div>
+        <form class="new-muse-form" action="/account" method="post">
+          <h3>NEW MUSING</h3>
+          <textarea id="post-content" name="content" placeholder="YOUR MUSING" required="required" maxlength="200"></textarea><br>
+          <input id="post-image" name="image_url" placeholder="SELFIE URL (optional)"></input><br>
+          <center><input type="submit" value="MUSE!"></center>
+        </form>
       </div>
+    </div>
+
+  </div>

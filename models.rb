@@ -2,7 +2,7 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   include BCrypt
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   def password
     @password ||= Password.new(password_hash)

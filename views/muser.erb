@@ -1,1 +1,10 @@
 MUSER!
+
+<%= @muser.first_name %>
+<%= @muser.last_name %>
+<hr>
+<% @posts.each do |x| %>
+<%= x.content %>
+<%= x.creator %>
+<% end %>
+<hr>

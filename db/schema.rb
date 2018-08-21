@@ -13,12 +13,15 @@
 ActiveRecord::Schema.define(version: 2018_08_19_175124) do
 
   create_table "posts", force: :cascade do |t|
+    t.integer "author_id"
     t.string "title"
     t.text "content"
     t.string "creator"
     t.string "image_url"
     t.datetime "post_time"
     t.boolean "public"
+    t.integer "user_id"
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
   create_table "users", force: :cascade do |t|
