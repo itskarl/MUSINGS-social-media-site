@@ -1,17 +1,26 @@
-/* BASE CSS */
-/* BASE CSS */
-/* BASE CSS */
+/* BASE CSS
+ BASE CSS
+ BASE CSS */
 
 :root {
   background-color: rgb(109, 98, 205);
   color: #c4ffff;
-  ;
   font-family: 'Abel', sans-serif;
+  font-weight: 400;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.homediv {
+  background: linear-gradient( rgb(110, 99, 205), rgba(110, 99, 205, 0.95), rgba(0, 0, 0, 0.6)), url('images/groupselfie.jpg');
+  background-position: right;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 50px)
 }
 
 a {
@@ -23,13 +32,15 @@ a:visited {
   color: rgb(189, 188, 122);
 }
 
-h1, h2, h3, p {
+h1, h2, p {
   margin: 0;
   text-align: right;
   font-weight: 400;
 }
 
-
+h3 {
+  font-weight: 400;
+}
 
 nav ul {
   list-style-type: none;
@@ -74,12 +85,13 @@ nav li a:hover {
 }
 
 nav li a:visited {
-  color:white;
+  color: white;
 }
 
+/* FORM STYLING */
 
 /* FORM STYLING */
-/* FORM STYLING */
+
 /* FORM STYLING */
 
 input, textarea {
@@ -95,13 +107,12 @@ input, textarea {
 }
 
 textarea {
-    height: 80px;
-    resize: none;
-    padding: 15px 15px 0 15px;
-    font-family: 'Abel', sans-serif;
-    font-size: 1em;
+  height: 80px;
+  resize: none;
+  padding: 15px 15px 0 15px;
+  font-family: 'Abel', sans-serif;
+  font-size: 1em;
 }
-
 
 input[type=submit] {
   height: 30px;
@@ -116,9 +127,11 @@ input[type=submit]:hover {
   background-color: #32279e;
 }
 
-/* HOME CSS */
-/* HOME CSS */
-/* HOME CSS */
+/*
+HOME CSS
+HOME CSS
+HOME CSS
+*/
 
 .simplecenter {
   display: flex;
@@ -134,6 +147,56 @@ input[type=submit]:hover {
   max-width: 400px;
 }
 
+.home-container {
+  display: grid;
+  grid-template-columns: calc(500px + 3vw) auto;
+}
+
+.home-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto auto;
+  flex-direction: column-reverse;
+  padding-top: 15vh;
+}
+
+.home-left {
+  min-width: calc(500px + 3vw);
+  width: 50vw
+}
+
+.home-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.home-buttons a{
+  padding: 5px;
+}
+
+
+button {
+  height: 30px;
+  background-color: #aba1ff;
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  margin: 10px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #6557d9;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
 .main-bubble {
   position: relative;
   background: white;
@@ -141,7 +204,7 @@ input[type=submit]:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: 480px;
   padding: 20px;
   margin-bottom: 1em;
 }
@@ -163,17 +226,74 @@ input[type=submit]:hover {
 
 .main-bubble h1 {
   font-family: 'Cabin Sketch', sans-serif;
-  font-size: 4em;
+  font-size: 6em;
   font-weight: 100;
   margin: 0;
   color: rgb(109, 98, 205);
 }
 
+.flavortext {
+  margin: 0 auto;
+  padding: 1.5em;
+  max-width: 480px;
+  font-weight: 400;
+}
 
-/* ACCOUNT CSS */
-/* ACCOUNT CSS */
-/* ACCOUNT CSS */
+.flavortext p {
+  text-align: center;
+}
 
+/*
+THIS IS FOR THE CAROUSEL
+THIS IS FOR THE CAROUSEL
+THIS IS FOR THE CAROUSEL
+*/
+
+#stage {
+  margin: 1em auto;
+  position: absolute;
+  top: 5em;
+  left: calc(25vw - 200px);
+}
+
+#stage a {
+  position: absolute;
+}
+
+#stage a img {
+  padding: 10px;
+  background-color: #afa8e9;
+  width: 400px;
+  box-shadow: 2px 2px 10px black;
+}
+
+#stage a:nth-of-type(1) {
+  animation-name: fader;
+  animation-delay: 2.5s;
+  animation-duration: 1s;
+  z-index: 20;
+}
+
+#stage a:nth-of-type(2) {
+  z-index: 10;
+}
+
+#stage a:nth-of-type(n+3) {
+  display: none;
+}
+
+@keyframes fader {
+  from {
+    opacity: 1.0;
+  }
+  to {
+    opacity: 0.0;
+  }
+}
+
+/* ACCOUNT CSS
+ACCOUNT CSS
+ACCOUNT CSS */
 
 .indiv-bubble {
   position: relative;
@@ -188,6 +308,7 @@ input[type=submit]:hover {
   margin-bottom: 2em;
   width: 400px;
   box-sizing: border-box;
+  box-shadow: 0px 2px 0px black;
 }
 
 .indiv-bubble:after {
@@ -203,42 +324,55 @@ input[type=submit]:hover {
   border-right: 0;
   margin-left: -13px;
   margin-bottom: -16px;
+  box-shadow: 2px 0px 0px black;
 }
 
 .account-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
+}
+
+.account-container h2 {
+  text-align: center;
+  padding-top: 2.5em;
 }
 
 .eachpost {
   margin: 1em 0 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .post-image {
   margin-top: -2em;
+  width: 400px;
+}
+
+.post-image img {
+  max-width: 400px;
 }
 
 .new-post-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-top: 2em;
 }
 
-.post-container {
-  height: 70vh;
+.all-posts-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.account-right-container {
   display: flex;
+  flex-direction: column;
   align-content: center;
-  justify-content: center;
-}
-
-.greeting {
-  margin: 1em;
-  text-align: right;
 }
 
 .new-muse-form {
   background-color: rgba(0, 0, 0, 0.49);
   padding: 30px 20px;
+  margin: 1em;
 }

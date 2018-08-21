@@ -1,15 +1,13 @@
 <div class="account-container">
 
   <div>
-    <div class="new-post-box">
-
-      <h2> THE LATEST MUSINGS </h2>
+    <h2> THE LATEST MUSINGS </h2>
+    <div class="all-posts-box">
 
       <% @allposts.reverse.first(20).each do |q| %>
         <div class="eachpost">
           <div class="indiv-bubble">
             <%= q.content %><br>
-            <%= q.image_url %><br>
             <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
           </div>
           <div class="post-image">
@@ -28,16 +26,16 @@
     </div>
   </div>
 
-  <div class="post-container">
-
+  <div class="account-right-container">
+    <div class="greeting">
+    <% if session[:user] != nil %>
+      <h2>WELCOME BACK,
+        <%= session[:user].first_name.upcase %>!
+      </h2>
+    <% end %>
+    </div>
     <div class="new-post-box">
-        <div class="greeting">
-        <% if session[:user] != nil %>
-          <h2>Welcome back,
-            <%= session[:user].first_name.capitalize %>!
-          </h2>
-        <% end %>
-        </div>
+
         <form class="new-muse-form" action="/account" method="post">
           <h3>NEW MUSING</h3>
           <textarea id="post-content" name="content" placeholder="YOUR MUSING" required="required" maxlength="200"></textarea><br>
