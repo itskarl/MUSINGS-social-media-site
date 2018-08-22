@@ -11,7 +11,7 @@
             <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
           </div>
           <div class="post-image">
-            <% if q.image_url == ""  %>
+            <% if q.image_url == "" || "null"  %>
               <img src="images/selfies/<%=rand(1..42)%>.jpg">
             <% else %>
               <img src="<%= q.image_url %>">
@@ -23,7 +23,6 @@
           </div>
         </div>
       <% end %>
-
 
       <% @allposts.shuffle.first(20).each do |q| %>
         <div class="eachpost">

@@ -134,7 +134,7 @@ post '/deleteaccount' do
   User.find(session[:user].id).destroy
   p "USER #{session[:user].first_name} DELETED"
   session[:user] = nil
-  redirect '/'
+  redirect '/logout'
 end
 
 get '/muser/:id' do

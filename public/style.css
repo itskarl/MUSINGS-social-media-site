@@ -443,12 +443,16 @@ ABOUT */
   height: calc(100vh - 50px)
 }
 
-.about-div p {
+.about-inner-div p {
   text-align: center;
   width: 400px;
   margin: 5px 0 5px 0;
 }
 
+.about-inner-div {
+  background-color: tomato;
+
+}
 /*
 ABOUT
 ABOUT
@@ -509,4 +513,97 @@ MUSER PAGE
 .muser-page-div h3 {
   padding: 1em;
   margin: 0;
+}
+
+
+
+/* SO MANY MODALS
+SO MANY MODALS
+SO MANY MODALS */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.delete-post {
+  margin: auto;
+  padding: 20px;
+  width: 250px;
+  position: fixed;
+  background-color: rgba(255, 0, 0, .7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: calc(50% - 145px);
+  top: calc(50vh - 100px);
+  line-height: 3em;
+}
+
+
+.delete-post:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 26px solid transparent;
+  border-top-color: rgba(255, 0, 0, .7);
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: -13px;
+  margin-bottom: -26px;
+}
+
+.delete-prompt p{
+  text-align: center;
+  margin: 20px;
+
+}
+
+.close {
+  padding: 10px;
+  background-color: green;
+  line-height: 2em;
+  border-radius: 15px;
+  width: 80px;
+}
+
+.delete-btn {
+  padding: 10px;
+  background-color: rgba(255, 70, 70, 0.71);
+  line-height: 2em;
+  border-radius: 15px;
+    width: 80px;
+}
+
+.close:hover,
+.close:focus, .delete-post a:focus, .delete-post a:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1)
+}
+
+.delete-or-not {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+
+
+@media screen and (max-width: 640px) {
+
 }

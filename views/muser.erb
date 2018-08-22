@@ -10,7 +10,7 @@
           <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
         </div>
         <div class="post-image">
-          <% if q.image_url == "" %>
+          <% if q.image_url == "" || "NULL"%>
             <img src="/images/selfies/<%=rand(1..42)%>.jpg">
           <% else %>
             <img src="<%= q.image_url %>">
@@ -28,9 +28,45 @@
 
           <% if session[:user].id == @muser.id %>
             <div>
-              <a href="/deletepost/<%= q.id %>">
+
+
+              <a id="trashBtn<%= q.id %>">
                 <i class="far fa-trash-alt"></i>
               </a>
+
+              <!-- The Modal -->
+              <div id="deletePrompt<%= q.id %>" class="modal">
+                <!-- Modal content -->
+                <div class="delete-post animated bounceInUp">
+
+                  <p>Are you sure? This is irreversible.</p>
+
+                    <div class="delete-or-not">
+                  <a  href="/deletepost/<%= q.id %>"><div class="delete-btn">DELETE</div></i></a>
+                  <a><div class="close" id="close<%= q.id %>">KEEP </div></a>
+                </div>
+
+                </div>
+              </div>
+
+              <script>
+                var modal<%= q.id %> = document.getElementById('deletePrompt<%= q.id %>');
+                var btn<%= q.id %> = document.getElementById("trashBtn<%= q.id %>");
+                var span<%= q.id %> = document.getElementById("close<%= q.id %>");
+
+                btn<%= q.id %>.onclick = function () {
+                  modal<%= q.id %>.style.display = "block";
+                }
+                span<%= q.id %>.onclick = function () {
+                  modal<%= q.id %>.style.display = "none";
+                }
+                window.onclick = function (event) {
+                  if (event.target == modal<%= q.id %>) {
+                    modal<%= q.id %>.style.display = "none";
+                  }
+                }
+              </script>
+
             </div>
           <% end %>
         </div>
