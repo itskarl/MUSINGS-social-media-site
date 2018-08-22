@@ -1,4 +1,3 @@
 require 'active_record'
-require './app.rb'
+require './server.rb'
 require 'sinatra/activerecord/rake'
- 
