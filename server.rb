@@ -7,7 +7,6 @@ require 'active_record'
 # set :database, 'sqlite3:rumblr.sqlite3'
 ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
 
-
 get '/' do
   p 'someone visited'
   @user = User.all
