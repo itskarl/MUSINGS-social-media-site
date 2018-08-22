@@ -1,19 +1,21 @@
-<h3><%= @muser.first_name.upcase %>'S ACCOUNT
-</h3>
+<div class="muser-page-div">
 
-<div class="all-posts-box">
-  <% @posts.reverse.first(20).each do |q| %>
-    <div class="eachpost">
-      <div class="indiv-bubble">
-        <%= q.content %><br>
-        <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
-      </div>
-      <div class="post-image">
-        <% if q.image_url == "" %>
-          <img src="/images/selfies/<%=rand(1..42)%>.jpg">
-        <% else %>
-          <img src="<%= q.image_url %>">
-        <% end %>
+  <h3><%= @muser.first_name.upcase %>'S POSTS</h3>
+
+  <div class="all-posts-box">
+    <% @posts.reverse.first(20).each do |q| %>
+      <div class="eachpost">
+        <div class="indiv-bubble">
+          <%= q.content %><br>
+          <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
+        </div>
+        <div class="post-image">
+          <% if q.image_url == "" %>
+            <img src="/images/selfies/<%=rand(1..42)%>.jpg">
+          <% else %>
+            <img src="<%= q.image_url %>">
+          <% end %>
+        </div>
         <br>
         <div class="date-and-delete">
           <div>
@@ -31,12 +33,9 @@
               </a>
             </div>
           <% end %>
-
         </div>
 
       </div>
-    </div>
-
+    <% end %>
   </div>
-<% end %>
 </div>

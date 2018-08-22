@@ -4,14 +4,35 @@
     <h2> THE LATEST MUSINGS </h2>
     <div class="all-posts-box">
 
-      <% @allposts.reverse.first(20).each do |q| %>
+      <% @allposts.reverse.first(2).each do |q| %>
         <div class="eachpost">
           <div class="indiv-bubble">
             <%= q.content %><br>
             <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
           </div>
           <div class="post-image">
-            <% if q.image_url == "" %>
+            <% if q.image_url == ""  %>
+              <img src="images/selfies/<%=rand(1..42)%>.jpg">
+            <% else %>
+              <img src="<%= q.image_url %>">
+            <% end %>
+              <br>
+              <%= q.post_time.to_s.byteslice(5..6) %> |
+              <%= q.post_time.to_s.byteslice(8..9) %> |
+              <%= q.post_time.to_s.byteslice(0..3) %>
+          </div>
+        </div>
+      <% end %>
+
+
+      <% @allposts.shuffle.first(20).each do |q| %>
+        <div class="eachpost">
+          <div class="indiv-bubble">
+            <%= q.content %><br>
+            <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
+          </div>
+          <div class="post-image">
+            <% if q.image_url == "" || "null" %>
               <img src="images/selfies/<%=rand(1..42)%>.jpg">
             <% else %>
               <img src="<%= q.image_url %>">

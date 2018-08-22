@@ -18,6 +18,10 @@ get '/login' do
   erb :login
 end
 
+get '/all' do
+  erb :all
+end
+
 get '/account' do
   @allposts = Post.all
 
@@ -134,11 +138,11 @@ post '/deleteaccount' do
 end
 
 get '/muser/:id' do
-  begin
+  if !session[:user].nil?
     @muser = User.find(params[:id])
     @posts = @muser.posts
-  rescue
-    redirect '/'
+  else
+    redirect '/login'
   end
   erb :muser
 end

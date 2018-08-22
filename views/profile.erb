@@ -1,30 +1,62 @@
-<div class="simplecenter">
-  This is your profile
+<div class="profile-div">
+  <div class="profile-innerdiv">
 
-  <br>
-  NAME:
-  <%= session[:user].first_name%>
-  <%= session[:user].last_name%><br>
-  USERNAME:
-  <%= session[:user].username%><br>
-  MUSE BIRTHDAY:
-  <%= session[:user].created_at.to_s.byteslice(5..6)%>
-  |
-  <%= session[:user].created_at.to_s.byteslice(8..9)%>
-  |
-  <%= session[:user].created_at.to_s.byteslice(0..3)%>
-  <br>
-  REAL BIRTHDAY:
-  <%= session[:user].birthday.byteslice(5..6)%>
-  |
-  <%= session[:user].birthday.byteslice(8..9)%>
-  |
-  <%= session[:user].birthday.byteslice(0..3)%>
-  <br>
-  EMAIL:
-  <%= session[:user].email%><br>
-  <a href="/deleteaccount">
-    DELETE
-  </a>
+  <div class="profile-row">
+    WELCOME TO YOUR PROFILE
+    </div>
+    <br>
+    <div class="profile-row">
+    <div>
+      NAME:
+    </div>
+    <div>
+      <%= session[:user].first_name%>
+      <%= session[:user].last_name%>
+    </div>
+    </div>
+    <div class="profile-row">
+    <div>
+      USERNAME:
+    </div>
+    <div>
+      <%= session[:user].username%>
+    </div>
+  </div>
+  <div class="profile-row">
+    <div>
+      MUSE BIRTHDAY:
+    </div>
+    <div>
+      <%= session[:user].created_at.to_s.byteslice(5..6)%>
+      |
+      <%= session[:user].created_at.to_s.byteslice(8..9)%>
+      |
+      <%= session[:user].created_at.to_s.byteslice(0..3)%>
+    </div>
+  </div>
+  <div class="profile-row">
+    <div>
+      REAL BIRTHDAY:
+    </div>
+    <div>
+      <%= session[:user].birthday.byteslice(5..6)%>
+      |
+      <%= session[:user].birthday.byteslice(8..9)%>
+      |
+      <%= session[:user].birthday.byteslice(0..3)%>
+    </div>
+  </div>
+  <div class="profile-row">
+    <div>
+      EMAIL:
+    </div>
+    <div>
+      <%= session[:user].email%><br>
+    </div>
+  </div>
 
+    <a href="/deleteaccount">
+      DELETE ACCOUNT
+    </a>
+  </div>
 </div>
