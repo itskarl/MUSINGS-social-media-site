@@ -83,10 +83,6 @@ post '/signup' do
     p 'error in signup'
   end
 
-  # rescue ActiveRecord::RecordNotUnique
-  # p 'Needs unique info'
-  # redirect '/signup'
-
 end
 
 
