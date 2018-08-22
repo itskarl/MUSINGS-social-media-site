@@ -10,7 +10,7 @@
           <a href="/muser/<%= q.user_id %>"><%= q.creator %></a><br>
         </div>
         <div class="post-image">
-          <% if q.image_url == "" || "NULL"%>
+          <% if q.image_url == "" ||  q.image_url == nil  %>
             <img src="/images/selfies/<%=rand(1..42)%>.jpg">
           <% else %>
             <img src="<%= q.image_url %>">

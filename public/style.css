@@ -432,8 +432,7 @@ ABOUT */
 .about-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   text-align: center;
   background: linear-gradient( rgba(110, 99, 205, .8), rgba(0, 0, 0, 0.6)), url('images/aboutpage.jpg');
   background-position: center;
@@ -443,16 +442,20 @@ ABOUT */
   height: calc(100vh - 50px)
 }
 
-.about-inner-div p {
-  text-align: center;
-  width: 400px;
-  margin: 5px 0 5px 0;
-}
 
 .about-inner-div {
-  background-color: tomato;
-
+  background-color: rgba(146, 130, 224, 0.53);
+  width: 400px;
+  margin: 5px;
+  padding-top: 30vh;
+  height: calc(100vh - 50px)
 }
+
+.about-inner-div p, .about-inner-div h2 {
+  text-align: center;
+}
+
+
 /*
 ABOUT
 ABOUT
@@ -473,25 +476,32 @@ ABOUT */
 }
 
 .profile-innerdiv {
-  background-color: rgba(1, 17, 80, 0.56);
-  padding: 2em;
-  border-radius: 8px;
   text-align: right;
-  box-shadow: 2px 2px 5px black;
+  background-color: rgba(146, 130, 224, 0.53);
+  width: 400px;
+  margin: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 30vh;
+  height: calc(100vh - 50px)
 }
 
 .profile-div div a {
-  background-color: rgba(255, 0, 0, 0.48);
+  background-color: rgba(255, 0, 0, 0.9);
   line-height: 4em;
   padding: .5em;
   border-radius: 8px;
+  color: white;
+}
+
+.profile-div div a:hover {
+  color: rgb(255, 159, 98);
 }
 
 .profile-row {
   display: flex;
   justify-content: space-between;
 }
-
 
 
 /*
@@ -507,7 +517,7 @@ MUSER PAGE
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100%;
+  height: calc(100vh - 50px);
 }
 
 .muser-page-div h3 {
@@ -601,7 +611,6 @@ SO MANY MODALS */
   width: 100%;
   justify-content: space-around;
 }
-
 
 
 @media screen and (max-width: 640px) {
