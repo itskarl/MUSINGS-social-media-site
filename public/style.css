@@ -586,7 +586,7 @@ SO MANY MODALS */
   padding: 10px;
   background-color: green;
   line-height: 2em;
-  border-radius: 15px;
+  border-radius: 2em;
   width: 80px;
 }
 
@@ -594,7 +594,7 @@ SO MANY MODALS */
   padding: 10px;
   background-color: rgba(255, 70, 70, 0.71);
   line-height: 2em;
-  border-radius: 15px;
+  border-radius: 2em;
     width: 80px;
 }
 

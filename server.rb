@@ -7,12 +7,12 @@ require 'active_record'
 # set :database, 'sqlite3:rumblr.sqlite3'
 ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
 
-# get '/' do
-#   p 'someone visited'
-#   @user = User.all
-#   p @users
-#   erb :home
-# end
+get '/' do
+  p 'someone visited'
+  @user = User.all
+  p @users
+  erb :home
+end
 
 get '/login' do
   erb :login
@@ -82,6 +82,10 @@ post '/signup' do
   else
     p 'error in signup'
   end
+
+  # rescue ActiveRecord::RecordNotUnique
+  # p 'Needs unique info'
+  # redirect '/signup'
 
 end
 
