@@ -613,7 +613,8 @@ SO MANY MODALS */
 }
 
 .all-div {
-  padding: 20px;
+  padding: 15%;
+  margin: 20px;
 }
 
 @media screen and (max-width: 640px) {

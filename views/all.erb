@@ -1,6 +1,6 @@
 <div class="all-div">
 
-<% User.all.each do |z|%>
+<% User.all.reverse.each do |z|%>
 <a href="/muser/<%= z.id %>"> <%= z.first_name %> <%= z.last_name %><br></a>
 EMAIL: <%= z.email %><br>
 USERNAME: <%= z.username %><br>
