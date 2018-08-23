@@ -1,4 +1,4 @@
-// CAROUSEL CODE from LIBRARY CREDITS BELOW
+// CAROUSEL CODE from LIBRARY, CREDITS BELOW
 
 
   // Original JavaScript code by Chirp Internet: www.chirp.com.au

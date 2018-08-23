@@ -8,9 +8,6 @@ require 'active_record'
 ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
 
 get '/' do
-  p 'someone visited'
-  @user = User.all
-  p @users
   erb :home
 end
 
