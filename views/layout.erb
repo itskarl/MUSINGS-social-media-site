@@ -24,8 +24,8 @@
           <li><a href="/logout">LOG OUT</a></li>
           <li><a href="/about">ABOUT</a></li>
           <li><a href="/profile"> <%= session[:user].first_name.upcase %></a></li>
-          <li><a href="/muser/<%= session[:user].id %>"> MUSINGS </a></li>
-          <li><a href="/account">HOME</a></li>
+          <li><a href="/muser/<%= session[:user].id %>">MY MUSINGS</a></li>
+          <li><a href="/account">MUSE-FEED</a></li>
         <% end %>
       </ul>
     </nav>

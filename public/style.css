@@ -477,7 +477,7 @@ ABOUT */
 
 .profile-innerdiv {
   text-align: right;
-  background-color: rgba(146, 130, 224, 0.53);
+  background-color: rgba(146, 130, 224, 0.2);
   width: 400px;
   margin: 5px;
   padding: 20px;
@@ -612,6 +612,9 @@ SO MANY MODALS */
   justify-content: space-around;
 }
 
+.all-div {
+  padding: 20px;
+}
 
 @media screen and (max-width: 640px) {
 
