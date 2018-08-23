@@ -517,7 +517,7 @@ MUSER PAGE
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  height: calc(100vh - 50px);
+  height: 100%;
 }
 
 .muser-page-div h3 {

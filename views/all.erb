@@ -1,3 +1,5 @@
+<div class="simplecenter">
+
 <% User.all.each do |z|%>
 <a href="/muser/<%= z.id %>"> <%= z.first_name %> <%= z.last_name %><br></a>
 EMAIL: <%= z.email %><br>
@@ -5,3 +7,5 @@ USERNAME: <%= z.username %><br>
 <%= z.birthday %>
 <hr>
 <% end %>
+
+</div>
