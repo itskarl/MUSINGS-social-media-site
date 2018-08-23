@@ -1,6 +1,6 @@
 require 'faker'
 
-30.times do
+10.times do
   user = User.new(
     email: Faker::Internet.email,
     first_name: Faker::Name.first_name,

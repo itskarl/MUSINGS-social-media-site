@@ -11,7 +11,6 @@ class CreateUsersTable < ActiveRecord::Migration[5.2]
       x.datetime :posted_at
       x.string :birthday
     end
-    add_index :users, :username, unique: true
     add_index :users, :email, unique: true
   end
 end
