@@ -3,7 +3,7 @@
   <h3><%= @muser.first_name.upcase %>'S POSTS</h3>
 
   <div class="all-posts-box">
-    <% @posts.first(20).each do |q| %>
+    <% @posts.reverse.first(20).each do |q| %>
       <div class="eachpost">
         <div class="indiv-bubble">
           <%= q.content %><br>

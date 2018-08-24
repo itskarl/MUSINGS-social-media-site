@@ -4,8 +4,8 @@ require 'faker'
 enable :sessions
 
 require 'active_record'
-# set :database, 'sqlite3:rumblr.sqlite3'
-ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
+set :database, 'sqlite3:rumblr.sqlite3'
+# ActiveRecord::Base.establish_connection(ENV['DATABSE_URL'])
 
 get '/' do
   erb :home
@@ -137,7 +137,7 @@ end
 get '/muser/:id' do
   if !session[:user].nil?
     @muser = User.find(params[:id])
-    @posts = @muser.posts
+    @posts = @muser.posts.all
   else
     redirect '/login'
   end
