@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-header {
+.header {
   position: absolute;
   top: 7.5px;
   left: 20px;
@@ -58,22 +58,21 @@ hr {
   border: 0 none;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0 20px 0 20px;
+/* RESPONSIVE NAV bars
+RESPONSIVE NAV bars
+RESPONSIVE NAV bars */
+
+.topnav {
   overflow: hidden;
   background-color: rgb(109, 98, 205);
 }
 
-nav li {
+.topnav a {
   float: right;
-}
-
-nav li a {
-  line-height: 1;
   display: block;
   color: white;
+  text-decoration: none;
+  line-height: 1;
   text-align: center;
   padding: 16px 15px 16px 15px;
   margin: 0 5px 0 5px;
@@ -85,9 +84,11 @@ nav li a {
   border-bottom-width: 1px;
   height: 16px;
   transition-duration: .3s;
+  position: relative;
+  z-index: 10
 }
 
-nav li a:hover {
+.topnav a:hover {
   color: rgb(238, 255, 110);
   padding: 4px 15px 4px 15px;
   margin: 12px 5px 12px 5px;
@@ -100,8 +101,54 @@ nav li a:hover {
   transition-duration: .3s;
 }
 
-nav li a:visited {
-  color: white;
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav a {
+    text-align: center;
+    padding: 16px 15px 16px 15px;
+    margin: 0;
+    text-decoration: none;
+    border-style: none;
+    height: 16px;
+  }
+  .topnav a:hover {
+    color: rgb(238, 255, 110);
+    padding: 16px 15px 16px 15px;
+    margin: 0;
+    text-decoration: none;
+    border-style: none;
+    height: 16px;
+    background-color: rgb(117, 71, 157)
+  }
+  .header {
+    display: none
+  }
 }
 
 /* FORM STYLING
@@ -442,7 +489,6 @@ ABOUT */
   height: calc(100vh - 50px)
 }
 
-
 .about-inner-div {
   background-color: rgba(146, 130, 224, 0.53);
   width: 400px;
@@ -454,7 +500,6 @@ ABOUT */
 .about-inner-div p, .about-inner-div h2 {
   text-align: center;
 }
-
 
 /*
 ABOUT
@@ -503,7 +548,6 @@ ABOUT */
   justify-content: space-between;
 }
 
-
 /*
 MUSER PAGE
 MUSER PAGE
@@ -525,24 +569,23 @@ MUSER PAGE
   margin: 0;
 }
 
-
-
 /* SO MANY MODALS
 SO MANY MODALS
 SO MANY MODALS */
 
-
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */
 }
 
 .delete-post {
@@ -560,7 +603,6 @@ SO MANY MODALS */
   line-height: 3em;
 }
 
-
 .delete-post:after {
   content: '';
   position: absolute;
@@ -576,10 +618,9 @@ SO MANY MODALS */
   margin-bottom: -26px;
 }
 
-.delete-prompt p{
+.delete-prompt p {
   text-align: center;
   margin: 20px;
-
 }
 
 .close {
@@ -595,15 +636,14 @@ SO MANY MODALS */
   background-color: rgba(255, 70, 70, 0.71);
   line-height: 2em;
   border-radius: 2em;
-    width: 80px;
+  width: 80px;
 }
 
-.close:hover,
-.close:focus, .delete-post a:focus, .delete-post a:hover {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transform: scale(1.1)
+.close:hover, .close:focus, .delete-post a:focus, .delete-post a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.1)
 }
 
 .delete-or-not {
@@ -618,5 +658,97 @@ SO MANY MODALS */
 }
 
 @media screen and (max-width: 640px) {
+  #stage a img {
+    width: 280px
+  }
+  #stage {
+    margin: 1em auto;
+    position: relative;
+    top: 370px;
+    left: calc(50vw - 150px);
+  }
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .home-left {
+    width: 320px;
+    min-width: 0px;
+  }
+  .home-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto;
+    flex-direction: column;
+    padding-top: 0;
+    height: 370px;
+  }
+  .flavortext {
+    margin: 0 auto;
+    max-width: 320px;
+    font-weight: 300;
+  }
+  .main-bubble {
+    position: relative;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    font-size: 10px;
+    width: 280px;
+    padding: 5px;
+  }
+  .home-buttons {
+    grid-template-columns: 1fr;
+    width: 250px;
+  }
+  .home-buttons button {
+    margin: 0;
+  }
+  .account-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .all-posts-box {
+    grid-template-columns: 1fr;
+  }
+  input, textarea {
+    width: 200px;
+  }
+  .indiv-bubble {
+    width: 300px
+  }
+  .post-image {
+    margin-top: -2em;
+    width: 300px;
+  }
+  .post-image img {
+    max-width: 300px;
+  }
 
+  .account-right-container {
+    height: 100%;
+  }
+  .account-container h2 {
+    padding-top: .5em;
+    }
+  .about-inner-div {
+
+    width: 300px;
+  }
+
+  .profile-innerdiv {
+
+    width: 300px;
+  }
+  .eachpost {
+      margin: 0;
+    }
+    .date-and-delete {
+
+      width: 300px;
+    }
 }
