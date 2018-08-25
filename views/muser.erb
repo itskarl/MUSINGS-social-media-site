@@ -1,6 +1,51 @@
 <div class="muser-page-div">
 
-  <h3><%= @muser.first_name.upcase %>'S POSTS</h3>
+  <div class="muser-header">
+  <div class="muser-title"><h3> <%= @muser.first_name.upcase %>'S MUSINGS &nbsp;<i class="fas fa-comment"></i></h3> </div>
+  <div class="muser-new-post newpost-bubble" id="myBtn-newpost"><h3>NEW MUSING</h3></div>
+  </div>
+
+  <div id="newpost-modal" class="modal">
+
+    <div class="modal-content-newpost">
+
+      <div class="new-post-box">
+
+          <form class="new-muse-form" action="/muser" method="post">
+
+            <span class="close-newpost">&times;</span><h3>NEW MUSING</h3>
+            <textarea id="post-content" name="content" placeholder="YOUR MUSING" required="required" maxlength="200"></textarea><br>
+            <input id="post-image" name="image_url" placeholder="SELFIE URL (optional)"></input><br>
+            <center><input type="submit" value="MUSE!"></center>
+          </form>
+        </div>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+
+var modal = document.getElementById('newpost-modal');
+var btn = document.getElementById("myBtn-newpost");
+var span = document.getElementsByClassName("close-newpost")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
+  </script>
+
+
 
   <div class="all-posts-box">
     <% @posts.reverse.first(20).each do |q| %>

@@ -24,7 +24,7 @@ body {
 
 .homediv {
   background: linear-gradient( rgb(110, 99, 205), rgba(110, 99, 205, 0.95), rgba(0, 0, 0, 0.6)), url('images/groupselfie.jpg');
-  background-position: right;
+  background-position: center;
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -565,8 +565,68 @@ MUSER PAGE
 }
 
 .muser-page-div h3 {
-  padding: 1em;
   margin: 0;
+  padding: .5em 1em;
+}
+
+.muser-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.muser-title {
+  background-color: rgb(139, 207, 226);
+  margin-bottom: 15px;
+  padding-left: 20%;
+  border-radius: 0 30px 30px 0;
+}
+
+.muser-new-post {
+  cursor: pointer;
+  margin-right: 5%;
+}
+
+.modal-content-newpost {
+  margin: 15% auto;
+  width: 400px;
+}
+
+.close-newpost {
+  color: rgb(210, 80, 80);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-newpost:hover, .close-newpost:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.newpost-bubble {
+  position: relative;
+  background: rgba(184, 173, 255, 0.6);
+  width: auto;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  border-radius: 30px;
+}
+
+
+.newpost-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: rgba(184, 173, 255, 0.6);
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -10px;
 }
 
 /* SO MANY MODALS
@@ -657,6 +717,14 @@ SO MANY MODALS */
   margin: 20px;
 }
 
+@media screen and (max-width: 1200px) {
+  .all-posts-box {
+     display: grid;
+     grid-template-columns: 1fr;
+
+   }
+}
+
 @media screen and (max-width: 640px) {
   #stage a img {
     width: 280px
@@ -728,27 +796,32 @@ SO MANY MODALS */
   .post-image img {
     max-width: 300px;
   }
-
   .account-right-container {
     height: 100%;
   }
   .account-container h2 {
     padding-top: .5em;
-    }
+  }
   .about-inner-div {
-
     width: 300px;
   }
-
   .profile-innerdiv {
-
     width: 300px;
   }
   .eachpost {
-      margin: 0;
-    }
-    .date-and-delete {
-
-      width: 300px;
-    }
+    margin: 0;
+  }
+  .date-and-delete {
+    width: 300px;
+  }
+  .muser-title {
+    margin-bottom: 15px;
+    padding-left: 0;
+    border-radius: 0 30px 30px 0;
+  }
+  .muser-header h3 {
+    font-size: 1em;
+  }
+  .modal-content-newpost {
+    width: auto;
 }

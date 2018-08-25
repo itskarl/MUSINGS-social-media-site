@@ -128,6 +128,22 @@ post '/account' do
   redirect '/account'
 end
 
+
+post '/muser' do
+  posting = Post.create(
+    content: params[:content],
+    creator: session[:user].username,
+    image_url: params[:image_url],
+    post_time: Time.now,
+    user_id: session[:user].id
+  )
+
+posting.save
+
+  redirect "/muser/#{session[:user].id}"
+end
+
+
 post '/deleteaccount' do
   User.find(session[:user].id).destroy
   p "USER #{session[:user].first_name} DELETED"
