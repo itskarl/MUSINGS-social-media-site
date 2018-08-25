@@ -439,6 +439,12 @@ ACCOUNT CSS */
   grid-gap: 5px;
 }
 
+.all-posts-box-muser {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
 .account-right-container {
   display: flex;
   flex-direction: column;
