@@ -789,6 +789,9 @@ SO MANY MODALS */
   .all-posts-box {
     grid-template-columns: 1fr;
   }
+  .all-posts-box-muser {
+    grid-template-columns: 1fr;
+  }
   input, textarea {
     width: 200px;
   }
