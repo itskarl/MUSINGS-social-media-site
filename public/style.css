@@ -735,6 +735,9 @@ SO MANY MODALS */
   #stage a img {
     width: 280px
   }
+  .homediv {
+    min-height: 750px;
+  }
   #stage {
     margin: 1em auto;
     position: relative;
