@@ -738,8 +738,8 @@ SO MANY MODALS */
   #stage {
     margin: 1em auto;
     position: relative;
-    top: 370px;
-    left: calc(50vw - 150px);
+    top: 320px;
+    left: calc(50vw - 160px);
   }
   .home-container {
     display: grid;
@@ -756,7 +756,7 @@ SO MANY MODALS */
     margin: auto auto;
     flex-direction: column;
     padding-top: 0;
-    height: 370px;
+    height: 300px;
   }
   .flavortext {
     margin: 0 auto;
