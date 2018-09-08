@@ -105,6 +105,24 @@ post '/login' do
   end
 end
 
+
+post '/home' do
+  email = params['email']
+  input_password = params['password']
+
+  user = User.find_by(email: email)
+  unless user == nil
+    if user.password == input_password
+      session[:user] = user
+      redirect :account
+    else
+      p 'invalid login'
+      redirect '/login'
+    end
+  end
+end
+
+
 get '/logout' do
   session[:user] = nil
   p 'user has logged out'
