@@ -52,7 +52,7 @@ get '/about' do
 end
 
 get '/deleteaccount' do
-  erb :deleteaccount
+    erb :deleteaccount
 end
 
 
@@ -164,7 +164,7 @@ end
 
 
 post '/deleteaccount' do
-  User.find(session[:user].id).destroy
+  User.find(session[:user].id).destroy unless session[:user].email == "karl@karl.karl"
   p "USER #{session[:user].first_name} DELETED"
   session[:user] = nil
   redirect '/logout'
