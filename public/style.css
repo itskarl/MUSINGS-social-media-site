@@ -728,6 +728,15 @@ SO MANY MODALS */
   margin: 20px;
 }
 
+.demobtn input[type="submit"] {
+  background-color: green;
+}
+
+.demobtn input[type="submit"]:hover {
+  background-color: purple;
+}
+
+
 
 
 @media screen and (max-width: 1200px) {
