@@ -730,6 +730,7 @@ SO MANY MODALS */
 
 .demobtn input[type="submit"] {
   background-color: green;
+  box-shadow: 0 0 3px black;
 }
 
 .demobtn input[type="submit"]:hover {
@@ -855,6 +856,6 @@ SO MANY MODALS */
   }
   .demobtn input[type="submit"] {
     width: 250px;
-    
+
   }
 }
