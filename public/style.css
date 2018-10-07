@@ -728,12 +728,12 @@ SO MANY MODALS */
   margin: 20px;
 }
 
-.demobtn input[type="submit"] {
+.demobtn input[type=submit] {
   background-color: green;
   box-shadow: 0 0 3px black;
 }
 
-.demobtn input[type="submit"]:hover {
+.demobtn input[type=submit]:hover {
   background-color: purple;
 }
 
@@ -854,7 +854,7 @@ SO MANY MODALS */
   .modal-content-newpost {
     width: auto;
   }
-  .demobtn input[type="submit"] {
+  .demobtn input[type=submit] {
     width: 250px;
 
   }
