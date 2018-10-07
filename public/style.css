@@ -791,11 +791,14 @@ SO MANY MODALS */
     justify-content: center;
     margin-bottom: 1em;
     font-size: 10px;
-    width: 280px;
+    width: 300px;
     padding: 20px 0px;
     height: 70px;
   }
   .main-bubble h1 {
+    font-family: 'Cabin Sketch', sans-serif;
+    font-size: 4em;
+    font-weight: 100;
     margin: 5px;
     padding: 5px;
   }
