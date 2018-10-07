@@ -792,7 +792,9 @@ SO MANY MODALS */
     margin-bottom: 1em;
     font-size: 10px;
     width: 280px;
-    padding: 5px;
+    padding: 20px 0px;
+    height: 70px;
+    padding: 10px;
   }
   .home-buttons {
     grid-template-columns: 1fr;
@@ -857,10 +859,5 @@ SO MANY MODALS */
       width: 250px;
   }
 
-  .main-bubble {
-    width: 300px;
-    height: 80px;
-    padding: 10px;
-  }
 
 }
