@@ -813,7 +813,7 @@ SO MANY MODALS */
     grid-template-columns: 1fr;
   }
   input, textarea {
-    width: 200px;
+    width: 230px;
   }
   .indiv-bubble {
     width: 300px
@@ -854,7 +854,7 @@ SO MANY MODALS */
   .modal-content-newpost {
     width: auto;
   }
-  .demobtn input {
+  .home-right input {
       width: 250px;
   }
 }
