@@ -485,7 +485,7 @@ ABOUT */
 .about-div {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
   background: linear-gradient( rgba(110, 99, 205, .8), rgba(0, 0, 0, 0.6)), url('images/aboutpage.jpg');
   background-position: center;
@@ -496,7 +496,6 @@ ABOUT */
 }
 
 .about-inner-div {
-  background-color: rgba(146, 130, 224, 0.53);
   width: 400px;
   padding-top: 30vh;
   height: calc(100vh - 50px)
