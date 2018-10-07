@@ -852,4 +852,9 @@ SO MANY MODALS */
   }
   .modal-content-newpost {
     width: auto;
+  }
+  .demobtn input[type="submit"] {
+    width: 250px;
+    
+  }
 }
