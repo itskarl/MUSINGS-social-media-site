@@ -315,7 +315,8 @@ THIS IS FOR THE CAROUSEL
   margin: 1em auto;
   position: absolute;
   top: 5em;
-  left: calc(25vw - 200px);
+  left: calc(25vw - 160px);
+  width: 300px;
 }
 
 #stage a {
@@ -757,6 +758,7 @@ SO MANY MODALS */
     position: relative;
     top: 320px;
     left: calc(50vw - 160px);
+    width: 300px;
   }
   .home-container {
     display: grid;
