@@ -854,8 +854,7 @@ SO MANY MODALS */
   .modal-content-newpost {
     width: auto;
   }
-  .demobtn input[type=submit] {
+  .demobtn input {
     width: 250px;
-
   }
 }
