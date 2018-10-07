@@ -498,13 +498,12 @@ ABOUT */
 .about-inner-div {
   background-color: rgba(146, 130, 224, 0.53);
   width: 400px;
-  margin: 5px;
   padding-top: 30vh;
   height: calc(100vh - 50px)
 }
 
 .about-inner-div p, .about-inner-div h2 {
-  text-align: center;
+  text-align: left;
 }
 
 /*
@@ -528,9 +527,8 @@ ABOUT */
 
 .profile-innerdiv {
   text-align: right;
-  background-color: rgba(146, 130, 224, 0.2);
   width: 400px;
-  margin: 5px;
+
   padding: 20px;
   box-sizing: border-box;
   padding-top: 30vh;
