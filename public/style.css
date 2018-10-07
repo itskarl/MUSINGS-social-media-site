@@ -856,4 +856,8 @@ SO MANY MODALS */
   .home-right input {
       width: 250px;
   }
+
+  .main-bubble h1 {
+    padding: 15px;
+  }
 }
