@@ -23,7 +23,7 @@ body {
 }
 
 .homediv {
-  background: linear-gradient( rgb(110, 99, 205), rgba(110, 99, 205, 0.95), rgba(0, 0, 0, 0.6)), url('images/groupselfie.jpg');
+  background: linear-gradient( rgb(110, 99, 205) 50px, rgba(0, 0, 0, 0.6)), url('images/groupselfie.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -399,7 +399,7 @@ ACCOUNT CSS */
   display: grid;
   grid-template-columns: 2fr 1fr;
   text-align: center;
-  background: linear-gradient( rgba(110, 99, 205, 1), rgba(110, 99, 205, .7), transparent), url('images/mountain.jpg');
+  background: linear-gradient( rgba(110, 99, 205, 1) 50px, transparent), url('images/mountain.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -488,7 +488,7 @@ ABOUT */
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: linear-gradient( rgba(110, 99, 205, .8), rgba(0, 0, 0, 0.6)), url('images/aboutpage.jpg');
+  background: linear-gradient( rgba(110, 99, 205, .8) 50px, rgba(0, 0, 0, 0.6)), url('images/aboutpage.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -517,7 +517,7 @@ ABOUT */
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient( rgba(110, 99, 205, 1), rgba(0, 0, 0, 0.6)), url('images/profileback.jpg');
+  background: linear-gradient( rgba(110, 99, 205, 1) 50px, rgba(0, 0, 0, 0.6)), url('images/profileback.jpg');
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
@@ -560,7 +560,7 @@ MUSER PAGE
 
 .muser-page-div {
   text-align: center;
-  background: linear-gradient( rgba(110, 99, 205, 1), rgba(110, 99, 205, .9), rgba(0, 0, 0, 0.1)), url('images/skyline.jpg');
+  background: linear-gradient( rgba(110, 99, 205, 1) 50px, rgba(0, 0, 0, 0.1)), url('images/skyline.jpg');
   background-position: bottom;
   background-attachment: fixed;
   background-size: cover;
@@ -757,7 +757,7 @@ SO MANY MODALS */
     margin: 1em auto;
     position: relative;
     top: 355px;
-    left: calc(50vw - 150px);
+    left: calc(50vw - 155px);
     width: 100%;
     height: 100%
   }
