@@ -756,9 +756,10 @@ SO MANY MODALS */
   #stage {
     margin: 1em auto;
     position: relative;
-    top: 320px;
+    top: 355px;
     left: calc(50vw - 160px);
-    width: 300px;
+    width: 100%;
+    height: 100%
   }
   .home-container {
     display: grid;
